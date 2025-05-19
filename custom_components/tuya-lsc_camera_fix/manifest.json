@@ -1,5 +1,5 @@
 {
-  "domain": "tuya-th-fix",
+  "domain": "tuya-th_fix",
   "name": "Tuya TH01 Fix",
   "version": "0.0.1",
   "codeowners": ["@DebenOldert"],

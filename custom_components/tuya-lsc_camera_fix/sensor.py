@@ -454,31 +454,6 @@ SENSORS: dict[str, tuple[TuyaSensorEntityDescription, ...]] = {
             state_class=SensorStateClass.MEASUREMENT,
             entity_registry_enabled_default=False,
         ),
-        TuyaSensorEntityDescription(
-            key=DPCode.VA_TEMPERATURE,
-            translation_key="temperature",
-            device_class=SensorDeviceClass.TEMPERATURE,
-            state_class=SensorStateClass.MEASUREMENT,
-        ),
-        TuyaSensorEntityDescription(
-            key=DPCode.TEMP_CURRENT,
-            translation_key="temperature",
-            device_class=SensorDeviceClass.TEMPERATURE,
-            state_class=SensorStateClass.MEASUREMENT,
-        ),
-        TuyaSensorEntityDescription(
-            key=DPCode.VA_HUMIDITY,
-            translation_key="humidity",
-            device_class=SensorDeviceClass.HUMIDITY,
-            state_class=SensorStateClass.MEASUREMENT,
-        ),
-        TuyaSensorEntityDescription(
-            key=DPCode.HUMIDITY_VALUE,
-            translation_key="humidity",
-            device_class=SensorDeviceClass.HUMIDITY,
-            state_class=SensorStateClass.MEASUREMENT,
-        ),
-        *BATTERY_SENSORS
     ),
     # Luminance Sensor
     # https://developer.tuya.com/en/docs/iot/categoryldcg?id=Kaiuz3n7u69l8
@@ -1343,22 +1318,6 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
         self._attr_unique_id = (
             f"{super().unique_id}{description.key}{description.subkey or ''}"
         )
-
-        import logging
-        import pprint
-
-        _LOGGER = logging.getLogger(__name__)
-
-        _LOGGER.debug("======= DEBUG TUYA DEVICE =======")
-        _LOGGER.debug("Device ID: %s", device.id)
-        _LOGGER.debug("Device Category: %s", device.category)
-        _LOGGER.debug("Device Status:")
-        _LOGGER.debug("\n%s", pprint.pformat(device.status))
-        _LOGGER.debug("Device Functions:")
-        _LOGGER.debug("\n%s", pprint.pformat(device.function))
-        _LOGGER.debug("Device Status Range:")
-        _LOGGER.debug("\n%s", pprint.pformat(device.status_range))
-        _LOGGER.debug("======= END DEBUG TUYA DEVICE =======")
 
         if int_type := self.find_dpcode(description.key, dptype=DPType.INTEGER):
             self._type_data = int_type

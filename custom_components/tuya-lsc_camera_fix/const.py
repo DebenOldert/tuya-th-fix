@@ -27,7 +27,7 @@ from homeassistant.const import (
     UnitOfVolume,
 )
 
-DOMAIN = "tuya-th-fix"
+DOMAIN = "tuya-th_fix"
 LOGGER = logging.getLogger(__package__)
 
 CONF_APP_TYPE = "tuya_app_type"
@@ -50,7 +50,22 @@ TUYA_RESPONSE_RESULT = "result"
 TUYA_RESPONSE_SUCCESS = "success"
 
 PLATFORMS = [
+    Platform.ALARM_CONTROL_PANEL,
+    Platform.BINARY_SENSOR,
+    Platform.BUTTON,
+    Platform.CAMERA,
+    Platform.CLIMATE,
+    Platform.COVER,
+    Platform.FAN,
+    Platform.HUMIDIFIER,
+    Platform.LIGHT,
+    Platform.NUMBER,
+    Platform.SCENE,
+    Platform.SELECT,
     Platform.SENSOR,
+    Platform.SIREN,
+    Platform.SWITCH,
+    Platform.VACUUM,
 ]
 
 
