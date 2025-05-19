@@ -50,22 +50,7 @@ TUYA_RESPONSE_RESULT = "result"
 TUYA_RESPONSE_SUCCESS = "success"
 
 PLATFORMS = [
-    Platform.ALARM_CONTROL_PANEL,
-    Platform.BINARY_SENSOR,
-    Platform.BUTTON,
-    Platform.CAMERA,
-    Platform.CLIMATE,
-    Platform.COVER,
-    Platform.FAN,
-    Platform.HUMIDIFIER,
-    Platform.LIGHT,
-    Platform.NUMBER,
-    Platform.SCENE,
-    Platform.SELECT,
     Platform.SENSOR,
-    Platform.SIREN,
-    Platform.SWITCH,
-    Platform.VACUUM,
 ]
 
 
