@@ -144,6 +144,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: TuyaConfigEntry) -> bool
             raise ConfigEntryAuthFailed(msg) from exc
         raise
 
+    import pprint
+
+    _LOGGER = logging.getLogger(__name__)
+
+    for device in manager.device_map:
+        _LOGGER.debug(pprint.pformat(device))
+        
+
     # Connection is successful, store the manager & listener
     entry.runtime_data = HomeAssistantTuyaData(manager=manager, listener=listener)
 
