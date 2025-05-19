@@ -27,7 +27,7 @@ from homeassistant.const import (
     UnitOfVolume,
 )
 
-DOMAIN = "tuya-lsc_camera_fix"
+DOMAIN = "tuya-th-fix"
 LOGGER = logging.getLogger(__package__)
 
 CONF_APP_TYPE = "tuya_app_type"
