@@ -148,7 +148,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: TuyaConfigEntry) -> bool
 
     _LOGGER = logging.getLogger(__name__)
 
-    for device in manager.device_map:
+    for device in manager.device_map.values():
         _LOGGER.debug(pprint.pformat(device))
         
 
