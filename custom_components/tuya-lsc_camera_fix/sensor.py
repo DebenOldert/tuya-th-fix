@@ -1311,6 +1311,7 @@ async def async_setup_entry(
         entities: list[TuyaSensorEntity] = []
         for device_id in device_ids:
             device = hass_data.manager.device_map[device_id]
+            print(f'Device {device.name} [{device.local_key}]: {device.status}')
             if descriptions := SENSORS.get(device.category):
                 entities.extend(
                     TuyaSensorEntity(device, hass_data.manager, description)
