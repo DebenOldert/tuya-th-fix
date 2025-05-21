@@ -148,12 +148,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: TuyaConfigEntry) -> bool
     entry.runtime_data = HomeAssistantTuyaData(manager=manager, listener=listener)
 
     print(f'HOMES: {[home.name for home in manager.user_homes]}')
-    for dev in manager.device_map.values():
-        print(f'=== {dev.name} ====')
-        print(dev.local_strategy)
-        print(dev.function)
-        print(dev.online)
-        print(f'='*20)
+    # for dev in manager.device_map.values():
+    #     print(f'=== {dev.name} ====')
+    #     print(dev.local_strategy)
+    #     print(dev.function)
+    #     print(dev.online)
+    #     print(f'='*20)
 
     # Cleanup device registry
     await cleanup_device_registry(hass, manager)
